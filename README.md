@@ -5,3 +5,21 @@
 Не робейте. Главное дело: жить нормально и не поддаваться увлечениям. А то что пользы? Куда бы волна ни понесла — всё худо; человек хоть на камне стой, да на своих ногах.
 
 И. С. 屠格涅夫《初恋》
+
+```c
+bool hasCycle(struct ListNode *head) {
+    if(head==NULL||head->next==NULL){
+        return false;
+    }
+    struct ListNode *slow=head;
+    struct ListNode *fast=head->next;
+    while(fast!=slow){
+        if(fast==NULL||fast->next==NULL){
+            return false;
+        }
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    return true;
+}
+```
